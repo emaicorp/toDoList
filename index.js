@@ -1,99 +1,10 @@
-// window.addEventListener("DOMContentLoaded", () => {
-//     const taskName = document.getElementById("name");
-//     const taskDescription = document.getElementById("description");
-//     const button = document.getElementById("submit");
-//     const lists = document.getElementById("lists");
-//     const taskArray = [];
-
-//     button.addEventListener("click", () => {
-//         if (taskName.value === "" || taskDescription.value === "") {
-//             alert("Fill Both Forms !!");
-//             return;
-//         }
-
-//         const task = {
-//             nameOfTask: taskName.value,
-//             taskDescription: taskDescription.value
-//         };
-
-//         taskArray.push(task);
-//         taskName.value = "";
-//         taskDescription.value = "";
-
-//         renderTasks();
-//     });
-
-//     function renderTasks() {
-//         lists.innerHTML = ""; // Clear the existing list items before rendering the updated list
-
-//         taskArray.forEach((task, index) => {
-//             const itemDiv = document.createElement("div");
-//             const li = document.createElement("li");
-//             const check = document.createElement("input");
-//             check.setAttribute("type", "checkbox");
-//             const deleteBtn = document.createElement("button");
-//             const editBtn = document.createElement("button");
-
-//             editBtn.className = "edit";
-//             editBtn.textContent = "Edit";
-//             deleteBtn.textContent = "Delete";
-//             deleteBtn.className = "delete";
-
-//             itemDiv.className = "item";
-//             li.innerHTML = `${task.nameOfTask}`;
-
-//             lists.appendChild(itemDiv);
-//             itemDiv.appendChild(check);
-//             itemDiv.appendChild(li);
-//             itemDiv.appendChild(editBtn);
-//             itemDiv.appendChild(deleteBtn);
-
-//             deleteBtn.addEventListener("click", () => {
-//                 taskArray.splice(index, 1);
-//                 renderTasks();
-//             });
-
-//             editBtn.addEventListener("click", () => {
-//                 taskName.value = task.nameOfTask;
-//                 taskDescription.value = task.taskDescription;
-
-//                 button.value = "Update";
-
-//                 button.onclick = function updateTask() {
-//                     taskArray[index].nameOfTask = taskName.value;
-//                     taskArray[index].taskDescription = taskDescription.value;
-
-//                     renderTasks();
-
-//                     button.value = "Submit";
-//                     button.onclick = null; // Reset the onclick handler
-//                 };
-//             });
-//         });
-//         console.log(taskArray)
-//     }
-// });
-
-
-
-// const student = {};
-// //const studentData = new Object();
-
-// student['name'] = 'Chika';
-// student.age = 34;
-// student['department'] = 'Computer Engineering';
-// console.log('The name of the student is ' + student.name);
-// console.log(`The age of the student is ${student.age} \n the department is ${student.department}`);
-// console.log(student);
-
-//New line
 window.addEventListener("DOMContentLoaded", (event) => {
     const taskName = document.getElementById("name");
     const taskDescription = document.getElementById("description");
     const button = document.getElementById("submit");
     const listContainer = document.getElementById("lists");
   
-    const taskArray = [{nameOfTask:"hllo ", taskDescription: "chimoo"}, {nameOfTask:"helo" , taskDescription: "chim"},{nameOfTask:"hel" , taskDescription: "chimo"}, ];
+    const taskArray = [];
   
     const addTodo = () => {
       if (taskName.value === "" || taskDescription.value === "") {
@@ -171,7 +82,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
           displayTodo();
           taskName.value = "";
           taskDescription.value = "";
-          button.value = "Submit";
+          button.value = "Add Task";
           button.onclick = null; // Reset the onclick handler
          
       };
@@ -185,5 +96,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
         addTodo()
         displayTodo()
       }
+      // else{
+      //   addTodo()
+      //   displayTodo()
+      // }
     });
   });
